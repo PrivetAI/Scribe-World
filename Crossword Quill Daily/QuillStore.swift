@@ -10,12 +10,34 @@ struct PuzzleProgress: Codable {
     var elapsed: Int = 0            // in-progress timer
     var usedReveal: Bool = false
     var started: Bool = false
+
+    init() {}
+
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        letters     = (try? c.decodeIfPresent([String].self, forKey: .letters))    ?? []
+        completed   = (try? c.decodeIfPresent(Bool.self,     forKey: .completed))  ?? false
+        clean       = (try? c.decodeIfPresent(Bool.self,     forKey: .clean))      ?? false
+        bestTime    = (try? c.decodeIfPresent(Int.self,      forKey: .bestTime))   ?? 0
+        elapsed     = (try? c.decodeIfPresent(Int.self,      forKey: .elapsed))    ?? 0
+        usedReveal  = (try? c.decodeIfPresent(Bool.self,     forKey: .usedReveal)) ?? false
+        started     = (try? c.decodeIfPresent(Bool.self,     forKey: .started))    ?? false
+    }
 }
 
 struct QuillSettings: Codable {
     var sound: Bool = true
     var haptics: Bool = true
     var onboardingDone: Bool = false
+
+    init() {}
+
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        sound         = (try? c.decodeIfPresent(Bool.self, forKey: .sound))         ?? true
+        haptics       = (try? c.decodeIfPresent(Bool.self, forKey: .haptics))       ?? true
+        onboardingDone = (try? c.decodeIfPresent(Bool.self, forKey: .onboardingDone)) ?? false
+    }
 }
 
 // Daily streak record.
@@ -24,6 +46,16 @@ struct DailyRecord: Codable {
     var currentStreak: Int = 0
     var bestStreak: Int = 0
     var solvedToday: Bool = false
+
+    init() {}
+
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        lastSolvedDateKey = (try? c.decodeIfPresent(String.self, forKey: .lastSolvedDateKey)) ?? ""
+        currentStreak     = (try? c.decodeIfPresent(Int.self,    forKey: .currentStreak))    ?? 0
+        bestStreak        = (try? c.decodeIfPresent(Int.self,    forKey: .bestStreak))       ?? 0
+        solvedToday       = (try? c.decodeIfPresent(Bool.self,   forKey: .solvedToday))      ?? false
+    }
 }
 
 final class QuillStore: ObservableObject {

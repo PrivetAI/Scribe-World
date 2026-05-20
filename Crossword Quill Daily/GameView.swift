@@ -20,7 +20,7 @@ struct GameView: View {
         _session = StateObject(wrappedValue: GameSession(
             puzzle: puzzle,
             savedLetters: saved,
-            elapsed: p.elapsed,
+            elapsed: p.completed ? 0 : p.elapsed,
             usedReveal: p.usedReveal
         ))
     }
