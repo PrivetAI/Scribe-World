@@ -43,6 +43,12 @@ struct GridView: View {
                     .fill(cellFill(isSelected: isSelected, active: active, isWrong: isWrong))
                 Rectangle()
                     .stroke(Scribe.ink.opacity(0.55), lineWidth: 0.6)
+                // A check flagged this cell wrong: draw an unmistakable red border so
+                // the result is visible even when the cell is also selected/active.
+                if isWrong {
+                    Rectangle()
+                        .strokeBorder(Scribe.wrong, lineWidth: max(1.8, cellSize * 0.08))
+                }
 
                 if let n = puzzle.cellNumbers[pos] {
                     VStack {
@@ -73,8 +79,10 @@ struct GridView: View {
     }
 
     private func cellFill(isSelected: Bool, active: Bool, isWrong: Bool) -> Color {
+        // "Wrong" must read clearly, so it takes priority over selection/active
+        // and uses a strong tint (the faint 0.18 was easy to miss).
+        if isWrong { return Scribe.wrong.opacity(0.34) }
         if isSelected { return Scribe.cellSelected }
-        if isWrong { return Scribe.wrong.opacity(0.18) }
         if active { return Scribe.cellActive.opacity(0.65) }
         return Scribe.cellFill
     }
