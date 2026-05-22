@@ -23,7 +23,7 @@ final class AppLibrary {
                     // DEBUG: fail loudly so authoring bugs are caught in builds.
                     assertionFailure("Invalid puzzle \(puzzle.id): \(err)")
                     // Release: skip invalid puzzle, log, keep app alive.
-                    print("[Quill] Skipping invalid puzzle \(puzzle.id): \(err)")
+                    print("[Scribe] Skipping invalid puzzle \(puzzle.id): \(err)")
                     continue
                 }
                 keep.append(puzzle)

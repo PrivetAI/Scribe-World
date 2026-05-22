@@ -25,7 +25,7 @@ struct PuzzleProgress: Codable {
     }
 }
 
-struct QuillSettings: Codable {
+struct ScribeSettings: Codable {
     var sound: Bool = true
     var haptics: Bool = true
     var onboardingDone: Bool = false
@@ -58,9 +58,9 @@ struct DailyRecord: Codable {
     }
 }
 
-final class QuillStore: ObservableObject {
+final class ScribeStore: ObservableObject {
     @Published private(set) var progress: [String: PuzzleProgress] = [:]
-    @Published var settings: QuillSettings = QuillSettings()
+    @Published var settings: ScribeSettings = ScribeSettings()
     @Published private(set) var daily: DailyRecord = DailyRecord()
     @Published var lastPlayedPuzzleID: String? = nil
 
@@ -85,7 +85,7 @@ final class QuillStore: ObservableObject {
             progress = p
         }
         if let d = defaults.data(forKey: kSettings),
-           let s = try? dec.decode(QuillSettings.self, from: d) {
+           let s = try? dec.decode(ScribeSettings.self, from: d) {
             settings = s
         }
         if let d = defaults.data(forKey: kDaily),

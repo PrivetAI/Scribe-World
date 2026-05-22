@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct GameView: View {
-    @EnvironmentObject var store: QuillStore
+    @EnvironmentObject var store: ScribeStore
     @Environment(\.presentationMode) var presentationMode
     @StateObject private var session: GameSession
     let isDaily: Bool
@@ -10,7 +10,7 @@ struct GameView: View {
     @State private var showCompletion = false
     @State private var didRegister = false
 
-    init(puzzle: Puzzle, store: QuillStore, isDaily: Bool) {
+    init(puzzle: Puzzle, store: ScribeStore, isDaily: Bool) {
         self.isDaily = isDaily
         let p = store.progress(for: puzzle.id)
         var saved: [[Character]]? = nil
@@ -96,7 +96,7 @@ struct GameView: View {
                 .padding(.vertical, 4)
             toolRow
             Spacer(minLength: 0)
-            QuillKeyboard(
+            ScribeKeyboard(
                 onLetter: { ch in session.type(ch); Haptics.tap(store); persist() },
                 onBackspace: { session.backspace(); Haptics.tap(store); persist() }
             )
@@ -120,7 +120,7 @@ struct GameView: View {
                 }
                 VStack(spacing: 8) {
                     toolRow
-                    QuillKeyboard(
+                    ScribeKeyboard(
                         onLetter: { ch in session.type(ch); Haptics.tap(store); persist() },
                         onBackspace: { session.backspace(); Haptics.tap(store); persist() }
                     )
@@ -141,28 +141,28 @@ struct GameView: View {
                 presentationMode.wrappedValue.dismiss()
             }) {
                 HStack(spacing: 4) {
-                    ChevronIcon(color: Quill.brassDeep)
+                    ChevronIcon(color: Scribe.brassDeep)
                         .frame(width: 16, height: 16)
                         .rotationEffect(.degrees(180))
-                    Text("Back").font(Quill.body(15)).foregroundColor(Quill.brassDeep)
+                    Text("Back").font(Scribe.body(15)).foregroundColor(Scribe.brassDeep)
                 }
             }
             Spacer()
             Text(session.puzzle.title)
-                .font(Quill.titleBold(17))
-                .foregroundColor(Quill.ink)
+                .font(Scribe.titleBold(17))
+                .foregroundColor(Scribe.ink)
                 .lineLimit(1)
             Spacer()
             HStack(spacing: 6) {
-                ClockIcon(color: Quill.inkSoft).frame(width: 16, height: 16)
+                ClockIcon(color: Scribe.inkSoft).frame(width: 16, height: 16)
                 Text(timeString(session.elapsed))
                     .font(.system(size: 15, weight: .medium, design: .monospaced))
-                    .foregroundColor(Quill.inkSoft)
+                    .foregroundColor(Scribe.inkSoft)
             }
             Button(action: { session.togglePause() }) {
                 ZStack {
-                    Circle().fill(Quill.brass).frame(width: 30, height: 30)
-                    PauseIcon(color: Quill.panel).frame(width: 13, height: 13)
+                    Circle().fill(Scribe.brass).frame(width: 30, height: 30)
+                    PauseIcon(color: Scribe.panel).frame(width: 13, height: 13)
                 }
             }
         }
@@ -179,11 +179,11 @@ struct GameView: View {
             }
             VStack(alignment: .leading, spacing: 2) {
                 Text(entry.map { "\($0.number) \($0.isAcross ? "Across" : "Down")" } ?? "")
-                    .font(Quill.body(12))
-                    .foregroundColor(Quill.brassDeep)
+                    .font(Scribe.body(12))
+                    .foregroundColor(Scribe.brassDeep)
                 Text(entry?.clue ?? "Select a cell")
-                    .font(Quill.title(16))
-                    .foregroundColor(Quill.ink)
+                    .font(Scribe.title(16))
+                    .foregroundColor(Scribe.ink)
                     .lineLimit(2)
                     .fixedSize(horizontal: false, vertical: true)
             }
@@ -195,15 +195,15 @@ struct GameView: View {
         .padding(.horizontal, 12)
         .padding(.vertical, 8)
         .background(
-            RoundedRectangle(cornerRadius: 12).fill(Quill.panel)
-                .overlay(RoundedRectangle(cornerRadius: 12).strokeBorder(Quill.brass.opacity(0.3), lineWidth: 1))
+            RoundedRectangle(cornerRadius: 12).fill(Scribe.panel)
+                .overlay(RoundedRectangle(cornerRadius: 12).strokeBorder(Scribe.brass.opacity(0.3), lineWidth: 1))
         )
     }
 
     private func navArrow(left: Bool) -> some View {
         ZStack {
-            Circle().fill(Quill.parchmentDeep).frame(width: 30, height: 30)
-            ChevronIcon(color: Quill.brassDeep)
+            Circle().fill(Scribe.parchmentDeep).frame(width: 30, height: 30)
+            ChevronIcon(color: Scribe.brassDeep)
                 .frame(width: 14, height: 14)
                 .rotationEffect(.degrees(left ? 180 : 0))
         }
@@ -213,7 +213,7 @@ struct GameView: View {
 
     private var toolRow: some View {
         HStack(spacing: 8) {
-            toolButton(label: "Check", icon: AnyView(CheckIcon(color: Quill.correctTint))) {
+            toolButton(label: "Check", icon: AnyView(CheckIcon(color: Scribe.correctTint))) {
                 showTools = true
             }
             .actionSheet(isPresented: $showTools) {
@@ -227,10 +227,10 @@ struct GameView: View {
                     .cancel()
                 ])
             }
-            toolButton(label: "Reveal", icon: AnyView(EyeIcon(color: Quill.brass))) {
+            toolButton(label: "Reveal", icon: AnyView(EyeIcon(color: Scribe.brass))) {
                 session.revealLetter(); Haptics.tap(store); persist()
             }
-            toolButton(label: "Clear", icon: AnyView(ClearIcon(color: Quill.inkSoft))) {
+            toolButton(label: "Clear", icon: AnyView(ClearIcon(color: Scribe.inkSoft))) {
                 session.clearPuzzle(); persist()
             }
         }
@@ -240,13 +240,13 @@ struct GameView: View {
         Button(action: action) {
             HStack(spacing: 6) {
                 icon.frame(width: 18, height: 18)
-                Text(label).font(Quill.body(14)).foregroundColor(Quill.ink)
+                Text(label).font(Scribe.body(14)).foregroundColor(Scribe.ink)
             }
             .frame(maxWidth: .infinity)
             .padding(.vertical, 9)
             .background(
-                RoundedRectangle(cornerRadius: 10).fill(Quill.panel)
-                    .overlay(RoundedRectangle(cornerRadius: 10).strokeBorder(Quill.brass.opacity(0.3), lineWidth: 1))
+                RoundedRectangle(cornerRadius: 10).fill(Scribe.panel)
+                    .overlay(RoundedRectangle(cornerRadius: 10).strokeBorder(Scribe.brass.opacity(0.3), lineWidth: 1))
             )
         }
     }
@@ -255,20 +255,20 @@ struct GameView: View {
 
     private var pauseOverlay: some View {
         ZStack {
-            Quill.ink.opacity(0.55).edgesIgnoringSafeArea(.all)
-            QuillCard {
+            Scribe.ink.opacity(0.55).edgesIgnoringSafeArea(.all)
+            ScribeCard {
                 VStack(spacing: 18) {
-                    Text("Paused").font(Quill.titleBold(26)).foregroundColor(Quill.ink)
+                    Text("Paused").font(Scribe.titleBold(26)).foregroundColor(Scribe.ink)
                     Text(timeString(session.elapsed))
                         .font(.system(size: 22, weight: .medium, design: .monospaced))
-                        .foregroundColor(Quill.inkSoft)
+                        .foregroundColor(Scribe.inkSoft)
                     Button(action: { session.togglePause() }) {
                         HStack(spacing: 8) {
-                            PlayIcon(color: Quill.panel).frame(width: 16, height: 16)
-                            Text("Resume").font(Quill.title(18)).foregroundColor(Quill.panel)
+                            PlayIcon(color: Scribe.panel).frame(width: 16, height: 16)
+                            Text("Resume").font(Scribe.title(18)).foregroundColor(Scribe.panel)
                         }
                         .padding(.horizontal, 28).padding(.vertical, 12)
-                        .background(RoundedRectangle(cornerRadius: 12).fill(Quill.brass))
+                        .background(RoundedRectangle(cornerRadius: 12).fill(Scribe.brass))
                     }
                 }
                 .padding(8)

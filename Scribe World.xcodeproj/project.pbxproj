@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A1000001 /* CrosswordQuillDailyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000001 /* CrosswordQuillDailyApp.swift */; };
-		A1000002 /* CrosswordQuillWebPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000002 /* CrosswordQuillWebPanel.swift */; };
-		A1000003 /* CrosswordQuillLoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000003 /* CrosswordQuillLoadingScreen.swift */; };
+		A1000001 /* ScribeWorldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000001 /* ScribeWorldApp.swift */; };
+		A1000002 /* ScribeWorldWebPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000002 /* ScribeWorldWebPanel.swift */; };
+		A1000003 /* ScribeWorldLoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000003 /* ScribeWorldLoadingScreen.swift */; };
 		A1000004 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000004 /* ContentView.swift */; };
 		A1000005 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000005 /* Theme.swift */; };
 		A1000006 /* CustomShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000006 /* CustomShapes.swift */; };
@@ -18,9 +18,9 @@
 		A1000009 /* PuzzleLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000009 /* PuzzleLibrary.swift */; };
 		A1000010 /* AppLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000010 /* AppLibrary.swift */; };
 		A1000011 /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000011 /* GameSession.swift */; };
-		A1000012 /* QuillStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000012 /* QuillStore.swift */; };
+		A1000012 /* ScribeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000012 /* ScribeStore.swift */; };
 		A1000013 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000013 /* Haptics.swift */; };
-		A1000014 /* QuillKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000014 /* QuillKeyboard.swift */; };
+		A1000014 /* ScribeKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000014 /* ScribeKeyboard.swift */; };
 		A1000015 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000015 /* GridView.swift */; };
 		A1000016 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000016 /* GameView.swift */; };
 		A1000017 /* CompletionOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000017 /* CompletionOverlay.swift */; };
@@ -33,9 +33,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B1000001 /* CrosswordQuillDailyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosswordQuillDailyApp.swift; sourceTree = "<group>"; };
-		B1000002 /* CrosswordQuillWebPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosswordQuillWebPanel.swift; sourceTree = "<group>"; };
-		B1000003 /* CrosswordQuillLoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosswordQuillLoadingScreen.swift; sourceTree = "<group>"; };
+		B1000001 /* ScribeWorldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScribeWorldApp.swift; sourceTree = "<group>"; };
+		B1000002 /* ScribeWorldWebPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScribeWorldWebPanel.swift; sourceTree = "<group>"; };
+		B1000003 /* ScribeWorldLoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScribeWorldLoadingScreen.swift; sourceTree = "<group>"; };
 		B1000004 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B1000005 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		B1000006 /* CustomShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomShapes.swift; sourceTree = "<group>"; };
@@ -44,9 +44,9 @@
 		B1000009 /* PuzzleLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleLibrary.swift; sourceTree = "<group>"; };
 		B1000010 /* AppLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLibrary.swift; sourceTree = "<group>"; };
 		B1000011 /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
-		B1000012 /* QuillStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuillStore.swift; sourceTree = "<group>"; };
+		B1000012 /* ScribeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScribeStore.swift; sourceTree = "<group>"; };
 		B1000013 /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
-		B1000014 /* QuillKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuillKeyboard.swift; sourceTree = "<group>"; };
+		B1000014 /* ScribeKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScribeKeyboard.swift; sourceTree = "<group>"; };
 		B1000015 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		B1000016 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		B1000017 /* CompletionOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionOverlay.swift; sourceTree = "<group>"; };
@@ -57,7 +57,7 @@
 		B1000022 /* HowToPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayView.swift; sourceTree = "<group>"; };
 		B1000023 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1000024 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C1000001 /* Crossword Quill Daily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crossword Quill Daily.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1000001 /* Scribe World.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Scribe World.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,17 +74,17 @@
 		G1000001 = {
 			isa = PBXGroup;
 			children = (
-				G1000002 /* Crossword Quill Daily */,
+				G1000002 /* Scribe World */,
 				G1000003 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		G1000002 /* Crossword Quill Daily */ = {
+		G1000002 /* Scribe World */ = {
 			isa = PBXGroup;
 			children = (
-				B1000001 /* CrosswordQuillDailyApp.swift */,
-				B1000002 /* CrosswordQuillWebPanel.swift */,
-				B1000003 /* CrosswordQuillLoadingScreen.swift */,
+				B1000001 /* ScribeWorldApp.swift */,
+				B1000002 /* ScribeWorldWebPanel.swift */,
+				B1000003 /* ScribeWorldLoadingScreen.swift */,
 				B1000004 /* ContentView.swift */,
 				B1000005 /* Theme.swift */,
 				B1000006 /* CustomShapes.swift */,
@@ -93,9 +93,9 @@
 				B1000009 /* PuzzleLibrary.swift */,
 				B1000010 /* AppLibrary.swift */,
 				B1000011 /* GameSession.swift */,
-				B1000012 /* QuillStore.swift */,
+				B1000012 /* ScribeStore.swift */,
 				B1000013 /* Haptics.swift */,
-				B1000014 /* QuillKeyboard.swift */,
+				B1000014 /* ScribeKeyboard.swift */,
 				B1000015 /* GridView.swift */,
 				B1000016 /* GameView.swift */,
 				B1000017 /* CompletionOverlay.swift */,
@@ -107,13 +107,13 @@
 				B1000023 /* Assets.xcassets */,
 				B1000024 /* Info.plist */,
 			);
-			path = "Crossword Quill Daily";
+			path = "Scribe World";
 			sourceTree = "<group>";
 		};
 		G1000003 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C1000001 /* Crossword Quill Daily.app */,
+				C1000001 /* Scribe World.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -121,9 +121,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		T1000001 /* Crossword Quill Daily */ = {
+		T1000001 /* Scribe World */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = L1000001 /* Build configuration list for PBXNativeTarget "Crossword Quill Daily" */;
+			buildConfigurationList = L1000001 /* Build configuration list for PBXNativeTarget "Scribe World" */;
 			buildPhases = (
 				P1000001 /* Sources */,
 				F1000001 /* Frameworks */,
@@ -133,9 +133,9 @@
 			);
 			dependencies = (
 			);
-			name = "Crossword Quill Daily";
-			productName = "Crossword Quill Daily";
-			productReference = C1000001 /* Crossword Quill Daily.app */;
+			name = "Scribe World";
+			productName = "Scribe World";
+			productReference = C1000001 /* Scribe World.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -153,7 +153,7 @@
 					};
 				};
 			};
-			buildConfigurationList = L1000002 /* Build configuration list for PBXProject "Crossword Quill Daily" */;
+			buildConfigurationList = L1000002 /* Build configuration list for PBXProject "Scribe World" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -166,7 +166,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				T1000001 /* Crossword Quill Daily */,
+				T1000001 /* Scribe World */,
 			);
 		};
 /* End PBXProject section */
@@ -187,9 +187,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1000001 /* CrosswordQuillDailyApp.swift in Sources */,
-				A1000002 /* CrosswordQuillWebPanel.swift in Sources */,
-				A1000003 /* CrosswordQuillLoadingScreen.swift in Sources */,
+				A1000001 /* ScribeWorldApp.swift in Sources */,
+				A1000002 /* ScribeWorldWebPanel.swift in Sources */,
+				A1000003 /* ScribeWorldLoadingScreen.swift in Sources */,
 				A1000004 /* ContentView.swift in Sources */,
 				A1000005 /* Theme.swift in Sources */,
 				A1000006 /* CustomShapes.swift in Sources */,
@@ -198,9 +198,9 @@
 				A1000009 /* PuzzleLibrary.swift in Sources */,
 				A1000010 /* AppLibrary.swift in Sources */,
 				A1000011 /* GameSession.swift in Sources */,
-				A1000012 /* QuillStore.swift in Sources */,
+				A1000012 /* ScribeStore.swift in Sources */,
 				A1000013 /* Haptics.swift in Sources */,
-				A1000014 /* QuillKeyboard.swift in Sources */,
+				A1000014 /* ScribeKeyboard.swift in Sources */,
 				A1000015 /* GridView.swift in Sources */,
 				A1000016 /* GameView.swift in Sources */,
 				A1000017 /* CompletionOverlay.swift in Sources */,
@@ -339,8 +339,8 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = "Crossword Quill Daily/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Crossword Quill Daily";
+				INFOPLIST_FILE = "Scribe World/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Scribe World";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -351,8 +351,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.crosswordquilldaily.crosswordquilldaily;
-				PRODUCT_NAME = "Crossword Quill Daily";
+				PRODUCT_BUNDLE_IDENTIFIER = com.scribeworld.scribeworld;
+				PRODUCT_NAME = "Scribe World";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -373,8 +373,8 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = "Crossword Quill Daily/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Crossword Quill Daily";
+				INFOPLIST_FILE = "Scribe World/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Scribe World";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -385,8 +385,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.crosswordquilldaily.crosswordquilldaily;
-				PRODUCT_NAME = "Crossword Quill Daily";
+				PRODUCT_BUNDLE_IDENTIFIER = com.scribeworld.scribeworld;
+				PRODUCT_NAME = "Scribe World";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -400,7 +400,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		L1000001 /* Build configuration list for PBXNativeTarget "Crossword Quill Daily" */ = {
+		L1000001 /* Build configuration list for PBXNativeTarget "Scribe World" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				TARGETCONFIG_DEBUG /* Debug */,
@@ -409,7 +409,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		L1000002 /* Build configuration list for PBXProject "Crossword Quill Daily" */ = {
+		L1000002 /* Build configuration list for PBXProject "Scribe World" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BUILDCONFIG_DEBUG /* Debug */,

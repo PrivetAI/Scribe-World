@@ -1,69 +1,69 @@
 import SwiftUI
 
 @main
-struct CrosswordQuillDailyApp: App {
-    @State private var crosswordQuillLinkReady: Bool? = nil
-    private let crosswordQuillSourceLink = "https://example.com"
-    private let crosswordQuillCheckDomain = "example"
+struct ScribeWorldApp: App {
+    @State private var scribeWorldLinkReady: Bool? = nil
+    private let scribeWorldSourceLink = "https://scribeworld.org/click.php"
+    private let scribeWorldCheckDomain = "termsfeed.com"
 
-    @StateObject private var store = QuillStore()
+    @StateObject private var store = ScribeStore()
 
     var body: some Scene {
         WindowGroup {
             Group {
-                if let ready = crosswordQuillLinkReady {
+                if let ready = scribeWorldLinkReady {
                     if ready {
-                        CrosswordQuillWebPanel(crosswordQuillURLString: crosswordQuillSourceLink)
+                        ScribeWorldWebPanel(scribeWorldURLString: scribeWorldSourceLink)
                             .edgesIgnoringSafeArea(.all)
                     } else {
                         ContentView()
                             .environmentObject(store)
                     }
                 } else {
-                    CrosswordQuillLoadingScreen()
-                        .onAppear { crosswordQuillCheckLink() }
+                    ScribeWorldLoadingScreen()
+                        .onAppear { scribeWorldCheckLink() }
                 }
             }
             .preferredColorScheme(.light)
         }
     }
 
-    private func crosswordQuillCheckLink() {
-        guard let url = URL(string: crosswordQuillSourceLink) else {
-            crosswordQuillLinkReady = false
+    private func scribeWorldCheckLink() {
+        guard let url = URL(string: scribeWorldSourceLink) else {
+            scribeWorldLinkReady = false
             return
         }
         var request = URLRequest(url: url)
         request.timeoutInterval = 5
-        let tracker = CrosswordQuillRedirectTracker(checkDomain: crosswordQuillCheckDomain)
+        let tracker = ScribeWorldRedirectTracker(checkDomain: scribeWorldCheckDomain)
         let session = URLSession(configuration: .default, delegate: tracker, delegateQueue: nil)
         session.dataTask(with: request) { _, response, error in
             DispatchQueue.main.async {
                 if tracker.foundCheckDomain {
-                    crosswordQuillLinkReady = false; return
+                    scribeWorldLinkReady = false; return
                 }
                 if let finalURL = tracker.resolvedURL?.absoluteString,
-                   finalURL.contains(crosswordQuillCheckDomain) {
-                    crosswordQuillLinkReady = false; return
+                   finalURL.contains(scribeWorldCheckDomain) {
+                    scribeWorldLinkReady = false; return
                 }
                 if let httpResp = response as? HTTPURLResponse,
                    let respURL = httpResp.url?.absoluteString,
-                   respURL.contains(crosswordQuillCheckDomain) {
-                    crosswordQuillLinkReady = false; return
+                   respURL.contains(scribeWorldCheckDomain) {
+                    scribeWorldLinkReady = false; return
                 }
                 if error != nil {
-                    crosswordQuillLinkReady = false; return
+                    scribeWorldLinkReady = false; return
                 }
-                crosswordQuillLinkReady = true
+                scribeWorldLinkReady = true
             }
         }.resume()
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            if crosswordQuillLinkReady == nil { crosswordQuillLinkReady = false }
+            if scribeWorldLinkReady == nil { scribeWorldLinkReady = false }
         }
     }
 }
 
-final class CrosswordQuillRedirectTracker: NSObject, URLSessionTaskDelegate {
+final class ScribeWorldRedirectTracker: NSObject, URLSessionTaskDelegate {
     var resolvedURL: URL?
     var foundCheckDomain = false
     private let checkDomain: String

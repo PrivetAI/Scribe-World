@@ -2,9 +2,9 @@ import SwiftUI
 
 // All icons are custom SwiftUI Shapes — no SF Symbols, no emoji.
 
-// Quill / feather pen.
-struct QuillIcon: View {
-    var color: Color = Quill.brass
+// Scribe / feather pen.
+struct ScribeIcon: View {
+    var color: Color = Scribe.brass
     var body: some View {
         GeometryReader { geo in
             let w = geo.size.width, h = geo.size.height
@@ -42,7 +42,7 @@ struct QuillIcon: View {
 
 // Open book.
 struct BookIcon: View {
-    var color: Color = Quill.brass
+    var color: Color = Scribe.brass
     var body: some View {
         GeometryReader { geo in
             let w = geo.size.width, h = geo.size.height
@@ -78,7 +78,7 @@ struct BookIcon: View {
 
 // Check mark.
 struct CheckIcon: View {
-    var color: Color = Quill.correctTint
+    var color: Color = Scribe.correctTint
     var body: some View {
         GeometryReader { geo in
             let w = geo.size.width, h = geo.size.height
@@ -94,7 +94,7 @@ struct CheckIcon: View {
 
 // Eye (reveal).
 struct EyeIcon: View {
-    var color: Color = Quill.brass
+    var color: Color = Scribe.brass
     var body: some View {
         GeometryReader { geo in
             let w = geo.size.width, h = geo.size.height
@@ -116,7 +116,7 @@ struct EyeIcon: View {
 
 // Gear (settings).
 struct GearIcon: View {
-    var color: Color = Quill.brass
+    var color: Color = Scribe.brass
     var body: some View {
         GeometryReader { geo in
             let s = min(geo.size.width, geo.size.height)
@@ -140,7 +140,7 @@ struct GearIcon: View {
 
 // Lock (privacy).
 struct LockIcon: View {
-    var color: Color = Quill.brass
+    var color: Color = Scribe.brass
     var body: some View {
         GeometryReader { geo in
             let w = geo.size.width, h = geo.size.height
@@ -161,7 +161,7 @@ struct LockIcon: View {
 
 // Chevron, pointing right by default.
 struct ChevronIcon: View {
-    var color: Color = Quill.inkSoft
+    var color: Color = Scribe.inkSoft
     var body: some View {
         GeometryReader { geo in
             let w = geo.size.width, h = geo.size.height
@@ -178,7 +178,7 @@ struct ChevronIcon: View {
 // Star (clean-solve).
 struct StarIcon: View {
     var filled: Bool = true
-    var color: Color = Quill.star
+    var color: Color = Scribe.star
     var body: some View {
         GeometryReader { geo in
             let w = geo.size.width, h = geo.size.height
@@ -205,7 +205,7 @@ struct StarIcon: View {
 
 // Clock (timer).
 struct ClockIcon: View {
-    var color: Color = Quill.inkSoft
+    var color: Color = Scribe.inkSoft
     var body: some View {
         GeometryReader { geo in
             let s = min(geo.size.width, geo.size.height)
@@ -226,7 +226,7 @@ struct ClockIcon: View {
 
 // Pause bars.
 struct PauseIcon: View {
-    var color: Color = Quill.ink
+    var color: Color = Scribe.ink
     var body: some View {
         GeometryReader { geo in
             let w = geo.size.width, h = geo.size.height
@@ -242,7 +242,7 @@ struct PauseIcon: View {
 
 // Play triangle.
 struct PlayIcon: View {
-    var color: Color = Quill.panel
+    var color: Color = Scribe.panel
     var body: some View {
         GeometryReader { geo in
             let w = geo.size.width, h = geo.size.height
@@ -259,7 +259,7 @@ struct PlayIcon: View {
 
 // Trash / clear.
 struct ClearIcon: View {
-    var color: Color = Quill.inkSoft
+    var color: Color = Scribe.inkSoft
     var body: some View {
         GeometryReader { geo in
             let w = geo.size.width, h = geo.size.height
@@ -283,7 +283,7 @@ struct ClearIcon: View {
 
 // Delete / backspace key glyph.
 struct BackspaceIcon: View {
-    var color: Color = Quill.ink
+    var color: Color = Scribe.ink
     var body: some View {
         GeometryReader { geo in
             let w = geo.size.width, h = geo.size.height
@@ -311,7 +311,7 @@ struct BackspaceIcon: View {
 
 // Inkwell (decorative).
 struct InkwellIcon: View {
-    var color: Color = Quill.quillBlue
+    var color: Color = Scribe.scribeBlue
     var body: some View {
         GeometryReader { geo in
             let w = geo.size.width, h = geo.size.height

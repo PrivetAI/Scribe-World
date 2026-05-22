@@ -269,7 +269,7 @@ enum PuzzleLibrary {
     }
 
     private static func make_arts_words_0() -> Puzzle {
-        Puzzle(id: "arts-words-0", pack: "Arts & Words", title: "The Quill", rows: 7, cols: 7,
+        Puzzle(id: "arts-words-0", pack: "Arts & Words", title: "The Scribe", rows: 7, cols: 7,
             pattern: [".##....", ".#....#", ".#.....", ".#.#.#.", ".....#.", "#....#.", "....##."],
             solution: ["G..PLOW", "R.PEER.", "I.ANGEL", "L.L.E.E", "LEARN.M", ".ACID.O", "STEM..N"],
             across: entries([(2, true, 0, 3, 4, "PLOW", "Soil tool"), (5, true, 1, 2, 4, "PEER", "Equal"), (6, true, 2, 2, 5, "ANGEL", "Winged being"), (8, true, 4, 0, 5, "LEARN", "Acquire knowledge"), (11, true, 5, 1, 4, "ACID", "Sour liquid"), (12, true, 6, 0, 4, "STEM", "Plant stalk")]),

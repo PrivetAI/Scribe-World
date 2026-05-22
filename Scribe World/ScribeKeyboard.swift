@@ -2,7 +2,7 @@ import SwiftUI
 
 // Custom on-screen A–Z keyboard built from Buttons (no system keyboard).
 // Letters rendered as Text. Includes backspace.
-struct QuillKeyboard: View {
+struct ScribeKeyboard: View {
     let onLetter: (Character) -> Void
     let onBackspace: () -> Void
 
@@ -33,10 +33,10 @@ struct QuillKeyboard: View {
                             Button(action: onBackspace) {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 7, style: .continuous)
-                                        .fill(Quill.parchmentDeep)
+                                        .fill(Scribe.parchmentDeep)
                                     RoundedRectangle(cornerRadius: 7, style: .continuous)
-                                        .strokeBorder(Quill.brass.opacity(0.4), lineWidth: 1)
-                                    BackspaceIcon(color: Quill.ink)
+                                        .strokeBorder(Scribe.brass.opacity(0.4), lineWidth: 1)
+                                    BackspaceIcon(color: Scribe.ink)
                                         .frame(width: keyH * 0.5, height: keyH * 0.5)
                                 }
                                 .frame(width: keyW * 1.6, height: keyH)
@@ -62,15 +62,15 @@ private struct KeyButton: View {
         Button(action: action) {
             ZStack {
                 RoundedRectangle(cornerRadius: 7, style: .continuous)
-                    .fill(Quill.panel)
+                    .fill(Scribe.panel)
                 RoundedRectangle(cornerRadius: 7, style: .continuous)
-                    .strokeBorder(Quill.brass.opacity(0.4), lineWidth: 1)
+                    .strokeBorder(Scribe.brass.opacity(0.4), lineWidth: 1)
                 Text(label)
-                    .font(Quill.title(min(height * 0.46, 22)))
-                    .foregroundColor(Quill.ink)
+                    .font(Scribe.title(min(height * 0.46, 22)))
+                    .foregroundColor(Scribe.ink)
             }
             .frame(width: width, height: height)
-            .shadow(color: Quill.ink.opacity(0.08), radius: 1.5, y: 1)
+            .shadow(color: Scribe.ink.opacity(0.08), radius: 1.5, y: 1)
         }
         .buttonStyle(KeyPressStyle())
     }

@@ -20,9 +20,9 @@ struct GridView: View {
                 }
             }
         }
-        .background(Quill.cellBlock)
+        .background(Scribe.cellBlock)
         .overlay(
-            Rectangle().strokeBorder(Quill.ink, lineWidth: 2)
+            Rectangle().strokeBorder(Scribe.ink, lineWidth: 2)
         )
     }
 
@@ -31,7 +31,7 @@ struct GridView: View {
         let pos = GridPos(row: r, col: c)
         if puzzle.isBlock(r, c) {
             Rectangle()
-                .fill(Quill.cellBlock)
+                .fill(Scribe.cellBlock)
                 .frame(width: cellSize, height: cellSize)
         } else {
             let isSelected = (pos == session.selected)
@@ -42,14 +42,14 @@ struct GridView: View {
                 Rectangle()
                     .fill(cellFill(isSelected: isSelected, active: active, isWrong: isWrong))
                 Rectangle()
-                    .stroke(Quill.ink.opacity(0.55), lineWidth: 0.6)
+                    .stroke(Scribe.ink.opacity(0.55), lineWidth: 0.6)
 
                 if let n = puzzle.cellNumbers[pos] {
                     VStack {
                         HStack {
                             Text("\(n)")
                                 .font(.system(size: max(7, cellSize * 0.26), weight: .semibold))
-                                .foregroundColor(Quill.inkSoft)
+                                .foregroundColor(Scribe.inkSoft)
                                 .padding(.leading, 1.5)
                                 .padding(.top, 0.5)
                             Spacer(minLength: 0)
@@ -60,8 +60,8 @@ struct GridView: View {
 
                 if letter != " " && letter != "#" {
                     Text(String(letter))
-                        .font(Quill.title(cellSize * 0.56))
-                        .foregroundColor(isWrong ? Quill.wrong : (isRevealed ? Quill.correctTint : Quill.ink))
+                        .font(Scribe.title(cellSize * 0.56))
+                        .foregroundColor(isWrong ? Scribe.wrong : (isRevealed ? Scribe.correctTint : Scribe.ink))
                 }
             }
             .frame(width: cellSize, height: cellSize)
@@ -73,9 +73,9 @@ struct GridView: View {
     }
 
     private func cellFill(isSelected: Bool, active: Bool, isWrong: Bool) -> Color {
-        if isSelected { return Quill.cellSelected }
-        if isWrong { return Quill.wrong.opacity(0.18) }
-        if active { return Quill.cellActive.opacity(0.65) }
-        return Quill.cellFill
+        if isSelected { return Scribe.cellSelected }
+        if isWrong { return Scribe.wrong.opacity(0.18) }
+        if active { return Scribe.cellActive.opacity(0.65) }
+        return Scribe.cellFill
     }
 }

@@ -14,18 +14,18 @@ struct OnboardingView: View {
 
     var body: some View {
         ZStack {
-            Quill.ink.opacity(0.6).edgesIgnoringSafeArea(.all)
-            QuillCard {
+            Scribe.ink.opacity(0.6).edgesIgnoringSafeArea(.all)
+            ScribeCard {
                 VStack(spacing: 18) {
                     stepIllustration
                         .frame(height: 120)
 
                     Text(steps[step].title)
-                        .font(Quill.titleBold(22))
-                        .foregroundColor(Quill.ink)
+                        .font(Scribe.titleBold(22))
+                        .foregroundColor(Scribe.ink)
                     Text(steps[step].body)
-                        .font(Quill.body(15))
-                        .foregroundColor(Quill.inkSoft)
+                        .font(Scribe.body(15))
+                        .foregroundColor(Scribe.inkSoft)
                         .multilineTextAlignment(.center)
                         .fixedSize(horizontal: false, vertical: true)
                         .frame(minHeight: 86)
@@ -33,7 +33,7 @@ struct OnboardingView: View {
                     HStack(spacing: 7) {
                         ForEach(0..<steps.count, id: \.self) { i in
                             Circle()
-                                .fill(i == step ? Quill.brass : Quill.parchmentDeep)
+                                .fill(i == step ? Scribe.brass : Scribe.parchmentDeep)
                                 .frame(width: 8, height: 8)
                         }
                     }
@@ -42,9 +42,9 @@ struct OnboardingView: View {
                         if step > 0 {
                             Button(action: { withAnimation { step -= 1 } }) {
                                 Text("Back")
-                                    .font(Quill.title(16)).foregroundColor(Quill.brassDeep)
+                                    .font(Scribe.title(16)).foregroundColor(Scribe.brassDeep)
                                     .frame(maxWidth: .infinity).padding(.vertical, 12)
-                                    .background(RoundedRectangle(cornerRadius: 11).strokeBorder(Quill.brass.opacity(0.5), lineWidth: 1))
+                                    .background(RoundedRectangle(cornerRadius: 11).strokeBorder(Scribe.brass.opacity(0.5), lineWidth: 1))
                             }
                         }
                         Button(action: {
@@ -52,14 +52,14 @@ struct OnboardingView: View {
                             else { onFinish() }
                         }) {
                             Text(step < steps.count - 1 ? "Next" : "Start Solving")
-                                .font(Quill.title(16)).foregroundColor(Quill.panel)
+                                .font(Scribe.title(16)).foregroundColor(Scribe.panel)
                                 .frame(maxWidth: .infinity).padding(.vertical, 12)
-                                .background(RoundedRectangle(cornerRadius: 11).fill(Quill.brass))
+                                .background(RoundedRectangle(cornerRadius: 11).fill(Scribe.brass))
                         }
                     }
 
                     Button(action: onFinish) {
-                        Text("Skip").font(Quill.body(13)).foregroundColor(Quill.inkSoft)
+                        Text("Skip").font(Scribe.body(13)).foregroundColor(Scribe.inkSoft)
                     }
                 }
                 .padding(6)
@@ -81,18 +81,18 @@ struct OnboardingView: View {
             HStack(spacing: 0) { miniCell(3, active, selected, letters, wrong); miniCell(4, active, selected, letters, wrong); miniCell(5, active, selected, letters, wrong) }
             HStack(spacing: 0) { miniCell(6, active, selected, letters, wrong, block: true); miniCell(7, active, selected, letters, wrong); miniCell(8, active, selected, letters, wrong) }
         }
-        .overlay(Rectangle().strokeBorder(Quill.ink, lineWidth: 2))
+        .overlay(Rectangle().strokeBorder(Scribe.ink, lineWidth: 2))
     }
 
     private func miniCell(_ i: Int, _ active: Set<Int>, _ selected: Int, _ letters: [Int: String], _ wrong: Set<Int>, block: Bool = false) -> some View {
         ZStack {
             if block {
-                Rectangle().fill(Quill.cellBlock)
+                Rectangle().fill(Scribe.cellBlock)
             } else {
-                Rectangle().fill(i == selected ? Quill.cellSelected : (active.contains(i) ? Quill.cellActive.opacity(0.6) : Quill.cellFill))
-                Rectangle().stroke(Quill.ink.opacity(0.5), lineWidth: 0.6)
+                Rectangle().fill(i == selected ? Scribe.cellSelected : (active.contains(i) ? Scribe.cellActive.opacity(0.6) : Scribe.cellFill))
+                Rectangle().stroke(Scribe.ink.opacity(0.5), lineWidth: 0.6)
                 if let l = letters[i], !l.isEmpty {
-                    Text(l).font(Quill.title(20)).foregroundColor(wrong.contains(i) ? Quill.wrong : Quill.ink)
+                    Text(l).font(Scribe.title(20)).foregroundColor(wrong.contains(i) ? Scribe.wrong : Scribe.ink)
                 }
             }
         }

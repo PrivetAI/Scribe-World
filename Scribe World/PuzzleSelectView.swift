@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct PuzzleSelectView: View {
-    @EnvironmentObject var store: QuillStore
+    @EnvironmentObject var store: ScribeStore
     let pack: PuzzlePack
 
     private let columns = [GridItem(.adaptive(minimum: 96), spacing: 14)]
@@ -31,27 +31,27 @@ struct PuzzleSelectView: View {
         return VStack(spacing: 8) {
             ZStack {
                 RoundedRectangle(cornerRadius: 12)
-                    .fill(completed ? Quill.brass.opacity(0.18) : Quill.panel)
+                    .fill(completed ? Scribe.brass.opacity(0.18) : Scribe.panel)
                 RoundedRectangle(cornerRadius: 12)
-                    .strokeBorder(Quill.brass.opacity(completed ? 0.5 : 0.3), lineWidth: 1)
+                    .strokeBorder(Scribe.brass.opacity(completed ? 0.5 : 0.3), lineWidth: 1)
                 VStack(spacing: 5) {
                     Text("\(index)")
-                        .font(Quill.titleBold(26))
-                        .foregroundColor(Quill.ink)
+                        .font(Scribe.titleBold(26))
+                        .foregroundColor(Scribe.ink)
                     Text("\(puzzle.rows)×\(puzzle.cols)")
-                        .font(Quill.body(11))
-                        .foregroundColor(Quill.inkSoft)
+                        .font(Scribe.body(11))
+                        .foregroundColor(Scribe.inkSoft)
                 }
                 if completed {
                     VStack {
                         HStack {
                             Spacer()
                             ZStack {
-                                Circle().fill(Quill.brass).frame(width: 22, height: 22)
+                                Circle().fill(Scribe.brass).frame(width: 22, height: 22)
                                 if prog.clean {
-                                    StarIcon(filled: true, color: Quill.panel).frame(width: 12, height: 12)
+                                    StarIcon(filled: true, color: Scribe.panel).frame(width: 12, height: 12)
                                 } else {
-                                    CheckIcon(color: Quill.panel).frame(width: 12, height: 12)
+                                    CheckIcon(color: Scribe.panel).frame(width: 12, height: 12)
                                 }
                             }
                             .padding(6)
@@ -62,13 +62,13 @@ struct PuzzleSelectView: View {
             }
             .frame(height: 86)
             Text(puzzle.title)
-                .font(Quill.body(12))
-                .foregroundColor(Quill.inkSoft)
+                .font(Scribe.body(12))
+                .foregroundColor(Scribe.inkSoft)
                 .lineLimit(1)
             if completed && prog.bestTime > 0 {
                 Text(timeString(prog.bestTime))
                     .font(.system(size: 11, weight: .medium, design: .monospaced))
-                    .foregroundColor(Quill.brassDeep)
+                    .foregroundColor(Scribe.brassDeep)
             }
         }
     }
