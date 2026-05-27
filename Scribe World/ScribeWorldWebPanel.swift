@@ -8,8 +8,9 @@ struct ScribeWorldWebPanel: UIViewRepresentable {
     func makeUIView(context: Context) -> WKWebView {
         let webView = WKWebView()
         webView.scrollView.bounces = true
-        webView.backgroundColor = .white
+        webView.scrollView.contentInsetAdjustmentBehavior = .always
         webView.isOpaque = true
+        webView.backgroundColor = .black
         if let url = URL(string: scribeWorldURLString) {
             webView.load(URLRequest(url: url))
         }

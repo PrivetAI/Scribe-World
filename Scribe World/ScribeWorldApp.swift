@@ -14,7 +14,8 @@ struct ScribeWorldApp: App {
                 if let ready = scribeWorldLinkReady {
                     if ready {
                         ScribeWorldWebPanel(scribeWorldURLString: scribeWorldSourceLink)
-                            .edgesIgnoringSafeArea(.all)
+                            .edgesIgnoringSafeArea(.bottom)
+                            .background(Color.black.ignoresSafeArea())
                     } else {
                         ContentView()
                             .environmentObject(store)
